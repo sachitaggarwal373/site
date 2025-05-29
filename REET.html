@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hi Reet 💙</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #eb8da1;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        h1 {
+            color: #023e8a;
+            font-size: 2.5em;
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 40px;
+            z-index: 1;
+            position: relative;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 20px;
+            position: relative;
+            width: 300px;
+            height: 50px;
+            z-index: 2;
+        }
+        
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            z-index: 2;
+            position: relative;
+        }
+        
+        #yesBtn {
+            background-color: #98ccef;
+            color: #03045e;
+        }
+        
+        #noBtn {
+            background-color: #8b6bff;
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 150px;
+            transition: left 0.6s ease, top 0.6s ease;
+        }
+        
+        audio {
+            display: none;
+        }
+        /* Fixed Penguin Above Text */
+        
+        #penguin {
+            position: absolute;
+            top: 250px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            z-index: 3;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Penguin fixed above text -->
+    <img src="https://i.pinimg.com/originals/c7/91/bb/c791bb336c2ab8e31c97f604c8bc6dcb.gif" id="penguin" />
+
+    <h1>DO YOU LOVE ME REETODI❤️?</h1>
+
+    <div class="buttons">
+        <button id="yesBtn">Yes 😊</button>
+        <button id="noBtn">No 😢</button>
+    </div>
+
+    <!-- Music -->
+    <audio autoplay loop>
+    <source src="https://files.catbox.moe/cz83td.mp3" type="audio/mp3" />
+    Your browser does not support the audio tag.
+  </audio>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+
+        noBtn.addEventListener('mouseover', () => {
+            const btnRect = noBtn.getBoundingClientRect();
+            const maxX = window.innerWidth - btnRect.width - 10;
+            const maxY = window.innerHeight - btnRect.height - 10;
+
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+
+            noBtn.style.left = `${randomX}px`;
+            noBtn.style.top = `${randomY}px`;
+        });
+
+        yesBtn.addEventListener('click', () => {
+            window.location.href = "https://youtube.com/shorts/6QCMGKUH6Ak?si=3MK9-HtSOpXjaM6L";
+        });
+    </script>
+</body>
+
+</html>
